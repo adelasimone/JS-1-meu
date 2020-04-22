@@ -44,15 +44,15 @@
 // for (let i = 0; i < 5; i++) {
 //     let nomes = prompt('Digite um nome');
 //     //ou
-//     //listaDeNomes.push(prumpt('Digite um nome'))
+//     //listaDeNomes.push(prumpt('Digite um nome')) //pega o nome q a pessoa vai escrever e add no array  
 //     listaDeNomes.push(nomes); //essa apagaria
 //     console.log(listaDeNomes);
 // }
 
 //5. Faça um programa que receba 10 números, 
 //calcule e imprima a soma dos números pares e a soma dos números ímpares.
-
 // - for para ler 10 prompt 
+
 // let numero = 0, somaImpares = 0, somaPares = 0,  contPar = 0, contImpar = 0;
 
 // for (let num = 1; num <= 10; num++) {
@@ -60,7 +60,7 @@
 
 //     if (numero % 2 === 0) {
 //         contPar++;
-//         somaPares += numero;
+//         somaPares += numero; //soma de numeros pares
 //     }
 //     else {
 //         contImpar++; 
@@ -78,15 +78,29 @@
 // total de mulheres;
 // média das idades dos homens;
 // média dos pesos das mulheres.
-let idade = '';
-let peso = '';
-let sexo = '';
+let idade = '', peso = '', sexo = '', somaFem = 0, somaMasc = 0, pesoTotalFem = 0, idadeTotalMasc = 0, mediaIdadeMasc = 0, mediaPesoFem = 0;
 
-for (let i = 0; i < 10; i++) {
-    let idade = parseInt(prompt('Digite a idade:'));
-    let peso = parseFloat(prompt('Digite o peso:'));
-    let sexo = prompt('Digite o sexo:');
+
+for (let i = 0; i < 2; i++) {
+    idade = parseInt(prompt('Digite a idade:'));
+    peso = parseInt(prompt('Digite o peso:'));
+    sexo = prompt('Digite o sexo:');
+
+    if (sexo == 'f') {
+        somaFem++;
+        pesoTotalFem += peso;
+        mediaPesoFem = pesoTotalFem / somaFem;
+    } else {
+        somaMasc++;
+        idadeTotalMasc += idade;
+        mediaIdadeMasc = idadeTotalMasc / somaMasc;
+    }
 }
+
+console.log('Total de homens:', +somaMasc);
+console.log('total de mulheres:', +somaFem);
+console.log('A média do peso entre as mulheres é', +mediaPesoFem);
+console.log('A média da idade entre os homens é', +mediaIdadeMasc)
 
 // - For ate 10 => 3 prompts ( idade, peso, sexo);
 // - contar qtd mulheres
